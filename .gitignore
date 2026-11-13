@@ -1,0 +1,6 @@
+launcher
+a.out
+
+*.out
+*.o
+.DS_Store
