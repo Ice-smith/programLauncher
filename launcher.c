@@ -21,7 +21,11 @@ int main(int argc, char *argv[]){
 
     if (pid == 0) {
 
-        execvp(argv[1], &argv[1]);
+        if (execvp(argv[1], &argv[1]) == -1) {
+            perror("execvp");
+            _exit(EXIT_FAILURE);
+
+        }
 
     }
 
