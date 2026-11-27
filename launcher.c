@@ -20,11 +20,9 @@ int main(int argc, char *argv[]){
     }
 
     if (pid == 0) {
-        for (int i = 1; i<argc; i++) {
-            printf("%s\n", argv[i]);
-        }
 
-        exit(EXIT_SUCCESS);
+        execvp(argv[1], &argv[1]);
+
     }
 
     pid_t child_pid = wait(&wstatus);
